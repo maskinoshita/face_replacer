@@ -1,0 +1,6 @@
+[submodule "face_replacer_example"]
+	path = face_replacer_example
+	url = https://github.com/maskinoshita/face_replacer_example.git
+[submodule "face_replacer_e2e"]
+	path = face_replacer_e2e
+	url = https://github.com/maskinoshita/face_replacer_e2e.git

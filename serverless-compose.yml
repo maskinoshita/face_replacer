@@ -1,0 +1,12 @@
+services:
+  face-replacer:
+    path: face_replacer_example
+  face-replacer-e2e:
+    path: face_replacer_e2e
+    params:
+      ProcessedBucketName: ${face-replacer.ProcessedBucketName}
+      OriginalBucketName: ${face-replacer.OriginalBucketName}
+      StaticWebSiteUrl: ${face-replacer.StaticWebSiteUrl}
+      HttpApiUrl: ${face-replacer.ServiceEndpoint}/search
+      DynamoTableName: ${face-replacer.DynamoTableName}
+      DynamoTableArn: ${face-replacer.DynamoTableArn}

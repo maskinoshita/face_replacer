@@ -1,0 +1,10 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# projects
+face_replacer_e2e/*
+face_replacer_example/*

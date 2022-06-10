@@ -111,6 +111,16 @@
     ```bash
     sls deploy
     ```
+3. APIGatewayの変更に伴い、APIのURLが変更されるので`static/index.html`を再修正し、アップロードする
+    ```bash
+    # Rest APIではServiceEndpointとなるので注意
+    sls info --verbose 2>/dev/null | grep ServiceEndpoint | awk '{print $2 "/search"}'
+
+    # static/index.htmlを編集
+
+    # 再度index.htmlをアップロード
+    aws s3 sync static s3://$(sls info --verbose 2>/dev/null | grep ProcessedBucketName | awk '{print $2}')
+    ```
 3. 再度、顔画像のアップロードとWebサイトの更新を実行する
 4. AWSのX-Rayのコンソールに行き、トレースとService Mapを確認する
     * APIGatewayやLambda内の関数がトレースに表示されることを確認する
@@ -147,7 +157,7 @@
 
     # 子ディレクトリの場合
     cd face_replacer_e2e
-    sls inovke stepf --name E2ETestStateMachine
+    sls invoke stepf --name E2ETestStateMachine
     ```
 6. 結果を確認してみる
     * StepFunctions

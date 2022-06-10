@@ -7,6 +7,5 @@ services:
       ProcessedBucketName: ${face-replacer.ProcessedBucketName}
       OriginalBucketName: ${face-replacer.OriginalBucketName}
       StaticWebSiteUrl: ${face-replacer.StaticWebSiteUrl}
-      HttpApiUrl: ${face-replacer.ServiceEndpoint}/search
       DynamoTableName: ${face-replacer.DynamoTableName}
       DynamoTableArn: ${face-replacer.DynamoTableArn}
